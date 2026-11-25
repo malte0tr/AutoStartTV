@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="description">Öffnet eine App automatisch, nachdem der Fernseher gestartet ist.</string>
+    <string name="enabled">Autostart aktiviert</string>
+    <string name="app_selected">App: %1$s</string>
+    <string name="app_none">keine ausgewählt</string>
+    <string name="choose_app">App auswählen</string>
+    <string name="choose_app_first">Bitte zuerst eine App auswählen.</string>
+    <string name="no_apps">Keine Apps gefunden.</string>
+    <string name="delay">Verzögerung nach dem Start</string>
+    <string name="delay_value">Verzögerung: %1$d s</string>
+    <string name="seconds">%1$d Sekunden</string>
+    <string name="test">Jetzt testen</string>
+    <string name="launch_failed">Die App konnte nicht gestartet werden.</string>
+    <string name="permission_title">Berechtigung</string>
+    <string name="permission_hint">Damit der Autostart funktioniert, \"Über anderen Apps einblenden\" für AutoStartTV erlauben.</string>
+    <string name="permission_button">Berechtigung erteilen</string>
+    <string name="permission_manual">Dieser Fernseher hat keine Einstellung für diese Berechtigung. Am Computer ausführen:\n\nadb shell appops set de.autostarttv SYSTEM_ALERT_WINDOW allow</string>
+</resources>

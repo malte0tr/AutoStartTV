@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">AutoStartTV</string>
+    <string name="description">Opens an app automatically after the TV has started.</string>
+    <string name="enabled">Autostart enabled</string>
+    <string name="app_selected">App: %1$s</string>
+    <string name="app_none">none selected</string>
+    <string name="choose_app">Choose app</string>
+    <string name="choose_app_first">Please choose an app first.</string>
+    <string name="no_apps">No apps found.</string>
+    <string name="delay">Delay after start</string>
+    <string name="delay_value">Delay: %1$d s</string>
+    <string name="seconds">%1$d seconds</string>
+    <string name="test">Test now</string>
+    <string name="launch_failed">The app could not be started.</string>
+    <string name="permission_title">Permission</string>
+    <string name="permission_hint">For autostart to work, allow \"Display over other apps\" for AutoStartTV.</string>
+    <string name="permission_button">Grant permission</string>
+    <string name="permission_manual">This TV has no settings screen for this permission. Run on a computer:\n\nadb shell appops set de.autostarttv SYSTEM_ALERT_WINDOW allow</string>
+</resources>
