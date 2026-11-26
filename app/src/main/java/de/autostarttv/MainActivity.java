@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -23,7 +22,7 @@ public class MainActivity extends Activity {
     private TextView enabledValue;
     private TextView appValue;
     private TextView delayValue;
-    private View permissionRow;
+    private TextView settingsLink;
     private boolean appDialogPending;
 
     @Override
@@ -35,18 +34,14 @@ public class MainActivity extends Activity {
         // Load the app list in the background right away, so the picker opens instantly.
         AppLauncher.preload(this);
 
-        enabledValue = setupRow(R.id.row_enabled, "01", R.string.autostart, v -> toggleEnabled());
-        appValue = setupRow(R.id.row_app, "02", R.string.app, v -> chooseApp());
-        delayValue = setupRow(R.id.row_delay, "03", R.string.delay, v -> chooseDelay());
-        TextView testValue = setupRow(R.id.row_test, "04", R.string.test, v -> testLaunch());
-        testValue.setText(R.string.test_value);
-        TextView permissionValue = setupRow(R.id.row_permission, "!", R.string.permission,
-                v -> openPermissionSettings());
-        permissionValue.setText(R.string.permission_value);
-        permissionRow = findViewById(R.id.row_permission);
-        setAccent(permissionValue, true);
-        setAccent((TextView) permissionRow.findViewById(R.id.row_number), true);
+        enabledValue = setupRow(R.id.row_enabled, R.string.autostart, v -> toggleEnabled());
+        appValue = setupRow(R.id.row_app, R.string.app, v -> chooseApp());
+        delayValue = setupRow(R.id.row_delay, R.string.delay, v -> chooseDelay());
+        setupRow(R.id.row_test, R.string.test, v -> testLaunch()).setText(R.string.test_value);
 
+        settingsLink = findViewById(R.id.text_settings);
+        settingsLink.setOnClickListener(v ->
+                startActivity(new Intent(this, SettingsActivity.class)));
         findViewById(R.id.text_imprint).setOnClickListener(v -> openImprint());
         ((TextView) findViewById(R.id.text_version))
                 .setText(getString(R.string.version, versionName()));
@@ -62,29 +57,24 @@ public class MainActivity extends Activity {
         updateViews();
     }
 
-    private TextView setupRow(int rowId, String number, int labelRes, View.OnClickListener click) {
+    private TextView setupRow(int rowId, int labelRes, View.OnClickListener click) {
         View row = findViewById(rowId);
-        ((TextView) row.findViewById(R.id.row_number)).setText(number);
         ((TextView) row.findViewById(R.id.row_label)).setText(labelRes);
         row.setOnClickListener(click);
         return row.findViewById(R.id.row_value);
     }
 
-    @SuppressWarnings("deprecation")
-    private void setAccent(TextView view, boolean accent) {
-        view.setTextColor(getResources().getColorStateList(
-                accent ? R.color.text_accent : R.color.text_primary));
-    }
-
     private void updateViews() {
         boolean enabled = settings.isEnabled();
         enabledValue.setText(enabled ? R.string.on : R.string.off);
-        setAccent(enabledValue, enabled);
+        Ui.setAccent(enabledValue, enabled);
 
         String label = AppLauncher.getLabel(this, settings.getPackage());
         appValue.setText(label != null ? label : getString(R.string.app_none));
         delayValue.setText(getString(R.string.delay_value, settings.getDelaySeconds()));
-        permissionRow.setVisibility(needsPermission() ? View.VISIBLE : View.GONE);
+
+        // Highlight the settings link while the permission is missing.
+        Ui.setAccent(settingsLink, Permissions.isMissing(this));
     }
 
     private void toggleEnabled() {
@@ -155,34 +145,15 @@ public class MainActivity extends Activity {
         }
     }
 
-    private boolean needsPermission() {
-        return Build.VERSION.SDK_INT >= 23 && !android.provider.Settings.canDrawOverlays(this);
-    }
-
-    // Only reachable on API 23+, the row is hidden on older versions.
-    @android.annotation.TargetApi(23)
-    private void openPermissionSettings() {
-        Intent intent = new Intent(android.provider.Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
-                Uri.parse("package:" + getPackageName()));
-        try {
-            startActivity(intent);
-        } catch (ActivityNotFoundException e) {
-            showMessage(R.string.permission_title, R.string.permission_manual);
-        }
-    }
-
     private void openImprint() {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.imprint_url)));
         try {
             startActivity(intent);
         } catch (ActivityNotFoundException e) {
-            showMessage(R.string.imprint_title, R.string.imprint_no_browser);
+            ChoiceDialog.show(this, getString(R.string.imprint_title),
+                    getString(R.string.imprint_no_browser),
+                    Collections.singletonList(getString(R.string.ok)), null, -1, null);
         }
-    }
-
-    private void showMessage(int titleRes, int messageRes) {
-        ChoiceDialog.show(this, getString(titleRes), getString(messageRes),
-                Collections.singletonList(getString(R.string.ok)), null, -1, null);
     }
 
     private String versionName() {

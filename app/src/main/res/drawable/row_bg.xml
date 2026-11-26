@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@color/red" android:state_focused="true" />
-    <item android:drawable="@color/red" android:state_selected="true" />
-    <item android:drawable="@color/red" android:state_pressed="true" />
-    <!-- Default: white with a thin black rule at the bottom. -->
+    <item android:drawable="@color/accent" android:state_focused="true" />
+    <item android:drawable="@color/accent" android:state_selected="true" />
+    <item android:drawable="@color/accent" android:state_pressed="true" />
+    <!-- Default: a thin rule at the bottom. -->
     <item>
         <layer-list>
-            <item android:drawable="@color/black" />
-            <item android:bottom="1dp" android:drawable="@color/white" />
+            <item android:drawable="@color/rule" />
+            <item android:bottom="1dp" android:drawable="@color/background" />
         </layer-list>
     </item>
 </selector>

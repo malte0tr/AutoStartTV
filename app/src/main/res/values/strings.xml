@@ -13,8 +13,13 @@
     <string name="delay_value">%1$d s</string>
     <string name="test">Test</string>
     <string name="test_value">Start now</string>
-    <string name="permission">Permission missing</string>
-    <string name="permission_value">Grant →</string>
+    <string name="permission">Display over other apps</string>
+    <string name="permission_granted">Granted</string>
+    <string name="permission_missing">Grant →</string>
+    <string name="permission_not_needed">Not needed</string>
+    <string name="permission_explanation">AutoStartTV needs the permission \"Display over other apps\" to open an app after the device has started.</string>
+    <string name="settings_title">Settings</string>
+    <string name="settings_link">Settings →</string>
 
     <string name="choose_app">Choose app</string>
     <string name="choose_delay">Delay after start</string>

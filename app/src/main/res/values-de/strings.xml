@@ -11,8 +11,13 @@
     <string name="delay_value">%1$d s</string>
     <string name="test">Test</string>
     <string name="test_value">Jetzt starten</string>
-    <string name="permission">Berechtigung fehlt</string>
-    <string name="permission_value">Erteilen →</string>
+    <string name="permission">Über anderen Apps einblenden</string>
+    <string name="permission_granted">Erteilt</string>
+    <string name="permission_missing">Erteilen →</string>
+    <string name="permission_not_needed">Nicht nötig</string>
+    <string name="permission_explanation">AutoStartTV braucht die Berechtigung \"Über anderen Apps einblenden\", um nach dem Start eine App öffnen zu dürfen.</string>
+    <string name="settings_title">Einstellungen</string>
+    <string name="settings_link">Einstellungen →</string>
 
     <string name="choose_app">App auswählen</string>
     <string name="choose_delay">Verzögerung nach dem Start</string>

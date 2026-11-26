@@ -69,6 +69,19 @@ final class ChoiceDialog {
         return dialog;
     }
 
+    /** Caches the item views, so scrolling long lists stays smooth. */
+    private static final class Holder {
+        final TextView label;
+        final ImageView icon;
+        final View marker;
+
+        Holder(View view) {
+            label = view.findViewById(R.id.item_label);
+            icon = view.findViewById(R.id.item_icon);
+            marker = view.findViewById(R.id.item_marker);
+        }
+    }
+
     private static final class Adapter extends BaseAdapter {
         private final LayoutInflater inflater;
         private final List<? extends CharSequence> labels;
@@ -100,18 +113,23 @@ final class ChoiceDialog {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            View view = convertView != null
-                    ? convertView
-                    : inflater.inflate(R.layout.choice_item, parent, false);
-            ((TextView) view.findViewById(R.id.item_label)).setText(labels.get(position));
-
-            ImageView iconView = view.findViewById(R.id.item_icon);
-            Drawable icon = icons != null ? icons.get(position) : null;
-            iconView.setImageDrawable(icon);
-            iconView.setVisibility(icons != null ? View.VISIBLE : View.GONE);
-
-            view.findViewById(R.id.item_marker)
-                    .setVisibility(position == selected ? View.VISIBLE : View.INVISIBLE);
+            View view = convertView;
+            Holder holder;
+            if (view == null) {
+                view = inflater.inflate(R.layout.choice_item, parent, false);
+                holder = new Holder(view);
+                view.setTag(holder);
+            } else {
+                holder = (Holder) view.getTag();
+            }
+            holder.label.setText(labels.get(position));
+            if (icons != null) {
+                holder.icon.setImageDrawable(icons.get(position));
+                holder.icon.setVisibility(View.VISIBLE);
+            } else {
+                holder.icon.setVisibility(View.GONE);
+            }
+            holder.marker.setVisibility(position == selected ? View.VISIBLE : View.INVISIBLE);
             return view;
         }
     }

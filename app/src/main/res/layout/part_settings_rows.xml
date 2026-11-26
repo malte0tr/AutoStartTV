@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/rule_heavy"
+        android:background="@color/rule_heavy" />
+
+    <include android:id="@+id/row_permission" layout="@layout/row" />
+</merge>

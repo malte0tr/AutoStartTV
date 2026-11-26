@@ -3,13 +3,6 @@
     style="@style/Row">
 
     <TextView
-        android:id="@+id/row_number"
-        style="@style/Text.Number"
-        android:layout_width="@dimen/number_width"
-        android:layout_height="wrap_content"
-        android:duplicateParentState="true" />
-
-    <TextView
         android:id="@+id/row_label"
         style="@style/Text"
         android:layout_width="0dp"

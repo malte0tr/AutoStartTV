@@ -1,9 +1,11 @@
 # AutoStartTV
 
+<img src="docs/logo.png" width="96" alt="Logo">
+
 Android-TV-App, die nach dem Einschalten des Fernsehers automatisch eine gewählte App öffnet.
 Sprachen: Deutsch und Englisch (folgt der Systemsprache).
 
-Gestaltung im Swiss Style: Weiß, Schwarz, Rot, Grotesk-Schrift (Inter), klares Raster.
+Gestaltung im Swiss Style, dunkel: Schwarz, Weiß, ein grüner Akzent, Grotesk-Schrift (Inter), klares Raster.
 Das Layout passt sich an: zwei Spalten auf Fernsehern und großen Bildschirmen,
 eine Spalte auf Handys und Tablets. Bedienbar mit Fernbedienung und Touch.
 
@@ -13,16 +15,17 @@ eine Spalte auf Handys und Tablets. Bedienbar mit Fernbedienung und Touch.
 ## Bedienung
 
 1. AutoStartTV öffnen.
-2. **02 App** wählen und die gewünschte App auswählen.
-3. **01 Autostart** steht dann auf *Ein* (umschalten mit OK).
-4. Optional **03 Verzögerung** einstellen (0–30 Sekunden nach dem Start).
-5. Falls angezeigt: **Berechtigung fehlt → Erteilen** und „Über anderen Apps einblenden“ erlauben.
+2. **App** wählen und die gewünschte App auswählen.
+3. **Autostart** steht dann auf *Ein* (umschalten mit OK).
+4. Optional **Verzögerung** einstellen (0–30 Sekunden nach dem Start).
+5. **Einstellungen →** öffnen (grün hervorgehoben, solange etwas fehlt) und
+   „Über anderen Apps einblenden“ erteilen.
    Ab Android 10 darf eine App nur mit dieser Berechtigung andere Apps im Hintergrund starten.
    Hat der Fernseher dafür keine Einstellung, per Computer:
    ```
    adb shell appops set de.autostarttv SYSTEM_ALERT_WINDOW allow
    ```
-6. Mit **04 Test** prüfen, ob die App startet.
+6. Mit **Test** prüfen, ob die App startet.
 
 Impressum: https://maltethier.de/impressum.html
 

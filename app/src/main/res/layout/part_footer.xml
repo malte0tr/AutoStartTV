@@ -2,24 +2,19 @@
 <merge xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
+        android:id="@+id/text_settings"
+        style="@style/Link"
+        android:text="@string/settings_link" />
+
+    <TextView
         android:id="@+id/text_imprint"
-        style="@style/Text.Small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="-8dp"
-        android:background="@drawable/link_bg"
-        android:clickable="true"
-        android:focusable="true"
-        android:paddingStart="8dp"
-        android:paddingTop="6dp"
-        android:paddingEnd="8dp"
-        android:paddingBottom="6dp"
+        style="@style/Link"
         android:text="@string/imprint" />
 
     <TextView
         android:id="@+id/text_version"
-        style="@style/Text.Small.Gray"
+        style="@style/Text.Small.Dim"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp" />
+        android:layout_marginTop="10dp" />
 </merge>

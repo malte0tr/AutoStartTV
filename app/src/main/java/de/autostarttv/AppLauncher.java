@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Looper;
@@ -73,6 +76,7 @@ final class AppLauncher {
 
     private static List<App> loadApps(Context context) {
         PackageManager pm = context.getPackageManager();
+        int iconSize = context.getResources().getDimensionPixelSize(R.dimen.icon_size);
         Map<String, ResolveInfo> found = new LinkedHashMap<>();
         collect(pm, found, Intent.CATEGORY_LEANBACK_LAUNCHER, context.getPackageName());
         collect(pm, found, Intent.CATEGORY_LAUNCHER, context.getPackageName());
@@ -80,17 +84,30 @@ final class AppLauncher {
         List<App> list = new ArrayList<>(found.size());
         for (Map.Entry<String, ResolveInfo> entry : found.entrySet()) {
             ResolveInfo info = entry.getValue();
-            Drawable icon;
-            try {
-                icon = info.loadIcon(pm);
-            } catch (RuntimeException e) {
-                icon = null;
-            }
-            list.add(new App(entry.getKey(), info.loadLabel(pm).toString(), icon));
+            list.add(new App(entry.getKey(), info.loadLabel(pm).toString(),
+                    loadSmallIcon(context, pm, info, iconSize)));
         }
         Collator collator = Collator.getInstance();
         Collections.sort(list, (a, b) -> collator.compare(a.label, b.label));
         return Collections.unmodifiableList(list);
+    }
+
+    /**
+     * Draws the icon once into a small bitmap of the displayed size. App icons are often
+     * large; scaling them down here keeps scrolling the list smooth on slow TV hardware.
+     */
+    private static Drawable loadSmallIcon(Context context, PackageManager pm, ResolveInfo info,
+                                          int size) {
+        try {
+            Drawable icon = info.loadIcon(pm);
+            Bitmap bitmap = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
+            Canvas canvas = new Canvas(bitmap);
+            icon.setBounds(0, 0, size, size);
+            icon.draw(canvas);
+            return new BitmapDrawable(context.getResources(), bitmap);
+        } catch (RuntimeException e) {
+            return null;
+        }
     }
 
     private static void collect(PackageManager pm, Map<String, ResolveInfo> found,

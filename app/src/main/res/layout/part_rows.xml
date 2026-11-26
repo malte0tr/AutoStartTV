@@ -4,11 +4,10 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/rule_heavy"
-        android:background="@color/black" />
+        android:background="@color/rule_heavy" />
 
     <include android:id="@+id/row_enabled" layout="@layout/row" />
     <include android:id="@+id/row_app" layout="@layout/row" />
     <include android:id="@+id/row_delay" layout="@layout/row" />
     <include android:id="@+id/row_test" layout="@layout/row" />
-    <include android:id="@+id/row_permission" layout="@layout/row" android:visibility="gone" />
 </merge>

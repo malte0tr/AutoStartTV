@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <View
-        android:layout_width="@dimen/accent_size"
-        android:layout_height="@dimen/accent_size"
-        android:background="@color/red" />
-
     <TextView
         style="@style/Text.Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:text="@string/app_name" />
 
     <TextView
