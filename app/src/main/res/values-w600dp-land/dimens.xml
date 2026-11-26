@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Phones in landscape: little height, so smaller type and tighter spacing. -->
+    <dimen name="page_pad_h">40dp</dimen>
+    <dimen name="page_pad_v">24dp</dimen>
+    <dimen name="page_pad_top">40dp</dimen>
+    <dimen name="column_gap">40dp</dimen>
+    <dimen name="section_gap">24dp</dimen>
+    <dimen name="row_min_height">60dp</dimen>
+    <dimen name="value_max_width">240dp</dimen>
+    <dimen name="text_title">44sp</dimen>
+    <dimen name="text_title_page">40sp</dimen>
+    <dimen name="text_body">17sp</dimen>
+    <dimen name="text_row">20sp</dimen>
+    <dimen name="text_small">16sp</dimen>
+    <dimen name="text_dialog_title">24sp</dimen>
+</resources>

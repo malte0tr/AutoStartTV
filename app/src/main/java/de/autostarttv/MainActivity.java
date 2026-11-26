@@ -21,7 +21,6 @@ public class MainActivity extends Activity {
 
     private TextView enabledValue;
     private TextView appValue;
-    private TextView delayValue;
     private TextView settingsLink;
     private boolean appDialogPending;
 
@@ -36,7 +35,6 @@ public class MainActivity extends Activity {
 
         enabledValue = setupRow(R.id.row_enabled, R.string.autostart, v -> toggleEnabled());
         appValue = setupRow(R.id.row_app, R.string.app, v -> chooseApp());
-        delayValue = setupRow(R.id.row_delay, R.string.delay, v -> chooseDelay());
         setupRow(R.id.row_test, R.string.test, v -> testLaunch()).setText(R.string.test_value);
 
         settingsLink = findViewById(R.id.text_settings);
@@ -71,7 +69,6 @@ public class MainActivity extends Activity {
 
         String label = AppLauncher.getLabel(this, settings.getPackage());
         appValue.setText(label != null ? label : getString(R.string.app_none));
-        delayValue.setText(getString(R.string.delay_value, settings.getDelaySeconds()));
 
         // Highlight the settings link while the permission is missing.
         Ui.setAccent(settingsLink, Permissions.isMissing(this));
@@ -116,23 +113,6 @@ public class MainActivity extends Activity {
                         updateViews();
                     });
         });
-    }
-
-    private void chooseDelay() {
-        int[] delays = Settings.DELAYS;
-        List<String> labels = new ArrayList<>(delays.length);
-        int selected = -1;
-        for (int i = 0; i < delays.length; i++) {
-            labels.add(getResources().getQuantityString(R.plurals.seconds, delays[i], delays[i]));
-            if (delays[i] == settings.getDelaySeconds()) {
-                selected = i;
-            }
-        }
-        ChoiceDialog.show(this, getString(R.string.choose_delay), null, labels, null, selected,
-                index -> {
-                    settings.setDelaySeconds(delays[index]);
-                    updateViews();
-                });
     }
 
     private void testLaunch() {

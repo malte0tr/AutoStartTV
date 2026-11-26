@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- TVs and large screens: two columns. -->
+<!-- TVs and large landscape screens: two columns. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,7 +8,7 @@
     android:clipToPadding="false"
     android:orientation="horizontal"
     android:paddingStart="@dimen/page_pad_h"
-    android:paddingTop="@dimen/page_pad_v"
+    android:paddingTop="@dimen/page_pad_top"
     android:paddingEnd="@dimen/page_pad_h"
     android:paddingBottom="@dimen/page_pad_v">
 

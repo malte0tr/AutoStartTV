@@ -17,6 +17,7 @@
     <string name="permission_not_needed">Nicht nötig</string>
     <string name="permission_explanation">AutoStartTV braucht die Berechtigung \"Über anderen Apps einblenden\", um nach dem Start eine App öffnen zu dürfen.</string>
     <string name="settings_title">Einstellungen</string>
+    <string name="settings_description">Verzögerung und Berechtigung für den Autostart.</string>
     <string name="settings_link">Einstellungen →</string>
 
     <string name="choose_app">App auswählen</string>

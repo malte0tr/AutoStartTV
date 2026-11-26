@@ -19,6 +19,7 @@
     <string name="permission_not_needed">Not needed</string>
     <string name="permission_explanation">AutoStartTV needs the permission \"Display over other apps\" to open an app after the device has started.</string>
     <string name="settings_title">Settings</string>
+    <string name="settings_description">Delay and permission for the autostart.</string>
     <string name="settings_link">Settings →</string>
 
     <string name="choose_app">Choose app</string>

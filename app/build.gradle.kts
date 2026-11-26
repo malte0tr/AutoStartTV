@@ -1,6 +1,13 @@
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+
 plugins {
     id("com.android.application")
 }
+
+// Version = versionMajor.versionMinor (Versionsnummer.Zwischennummer).
+val versionMajor = 1
+val versionMinor = 3
 
 android {
     namespace = "de.autostarttv"
@@ -10,8 +17,8 @@ android {
         applicationId = "de.autostarttv"
         minSdk = 21
         targetSdk = 35
-        versionCode = 3
-        versionName = "1.2"
+        versionCode = 4
+        versionName = "$versionMajor.$versionMinor"
     }
 
     buildTypes {
@@ -28,5 +35,16 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+    }
+}
+
+// APK file name: AutoStartTV_<YYYYMMDD><Versionsnummer>-<Zwischennummer>.apk,
+// e.g. AutoStartTV_202611261-3.apk (built on 26 Nov 2026, version 1.3).
+val buildDate: String = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"))
+android.applicationVariants.all {
+    val suffix = if (buildType.name == "release") "" else "-${buildType.name}"
+    outputs.all {
+        (this as com.android.build.gradle.internal.api.BaseVariantOutputImpl).outputFileName =
+            "AutoStartTV_$buildDate$versionMajor-$versionMinor$suffix.apk"
     }
 }

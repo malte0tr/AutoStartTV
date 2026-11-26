@@ -3,6 +3,7 @@
     <!-- Phones (narrow screens) -->
     <dimen name="page_pad_h">24dp</dimen>
     <dimen name="page_pad_v">32dp</dimen>
+    <dimen name="page_pad_top">64dp</dimen>
     <dimen name="column_gap">0dp</dimen>
     <dimen name="section_gap">32dp</dimen>
     <dimen name="rule_heavy">3dp</dimen>

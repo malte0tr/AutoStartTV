@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingStart="@dimen/page_pad_h"
-        android:paddingTop="@dimen/page_pad_v"
+        android:paddingTop="@dimen/page_pad_top"
         android:paddingEnd="@dimen/page_pad_h"
         android:paddingBottom="@dimen/page_pad_v">
 

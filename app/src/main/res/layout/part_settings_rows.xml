@@ -6,5 +6,14 @@
         android:layout_height="@dimen/rule_heavy"
         android:background="@color/rule_heavy" />
 
+    <include android:id="@+id/row_delay" layout="@layout/row" />
     <include android:id="@+id/row_permission" layout="@layout/row" />
+
+    <TextView
+        style="@style/Text.Body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:maxWidth="560dp"
+        android:text="@string/permission_explanation" />
 </merge>

@@ -6,8 +6,8 @@ Android-TV-App, die nach dem Einschalten des Fernsehers automatisch eine gewähl
 Sprachen: Deutsch und Englisch (folgt der Systemsprache).
 
 Gestaltung im Swiss Style, dunkel: Schwarz, Weiß, ein grüner Akzent, Grotesk-Schrift (Inter), klares Raster.
-Das Layout passt sich an: zwei Spalten auf Fernsehern und großen Bildschirmen,
-eine Spalte auf Handys und Tablets. Bedienbar mit Fernbedienung und Touch.
+Das Layout passt sich an: zwei Spalten auf Fernsehern und im Querformat,
+eine Spalte im Hochformat. Bedienbar mit Fernbedienung und Touch.
 
 <img src="docs/screenshot-tv.png" width="560" alt="AutoStartTV auf dem Fernseher">
 <img src="docs/screenshot-phone.png" width="200" alt="AutoStartTV auf dem Handy">
@@ -17,9 +17,9 @@ eine Spalte auf Handys und Tablets. Bedienbar mit Fernbedienung und Touch.
 1. AutoStartTV öffnen.
 2. **App** wählen und die gewünschte App auswählen.
 3. **Autostart** steht dann auf *Ein* (umschalten mit OK).
-4. Optional **Verzögerung** einstellen (0–30 Sekunden nach dem Start).
-5. **Einstellungen →** öffnen (grün hervorgehoben, solange etwas fehlt) und
-   „Über anderen Apps einblenden“ erteilen.
+4. **Einstellungen →** öffnen (grün hervorgehoben, solange etwas fehlt):
+   - optional **Verzögerung** einstellen (0–30 Sekunden nach dem Start),
+   - „Über anderen Apps einblenden“ erteilen.
    Ab Android 10 darf eine App nur mit dieser Berechtigung andere Apps im Hintergrund starten.
    Hat der Fernseher dafür keine Einstellung, per Computer:
    ```
@@ -34,10 +34,13 @@ Impressum: https://maltethier.de/impressum.html
 ```
 ./gradlew assembleRelease
 ```
-Die APK liegt danach unter `app/build/outputs/apk/release/`.
+Die APK liegt danach unter `app/build/outputs/apk/release/` und heißt
+`AutoStartTV_<JJJJMMTT><Versionsnummer>-<Zwischennummer>.apk`,
+z. B. `AutoStartTV_202611261-3.apk` (gebaut am 26.11.2026, Version 1.3).
+Die Version wird in `app/build.gradle.kts` über `versionMajor` und `versionMinor` gesetzt.
 Bei jedem Push baut GitHub Actions die APK automatisch (Reiter *Actions* → Artefakt *AutoStartTV*).
 
-Installation auf dem Fernseher z. B. per `adb install app-release.apk`.
+Installation auf dem Fernseher z. B. per `adb install AutoStartTV_202611261-3.apk`.
 
 ---
 
