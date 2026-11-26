@@ -2,6 +2,7 @@
 <resources>
     <string name="app_name" translatable="false">AutoStartTV</string>
     <string name="imprint_url" translatable="false">https://maltethier.de/impressum.html</string>
+    <string name="help_url" translatable="false">https://maltethier.de/autostarttv/Help.html</string>
     <string name="description">Opens an app of your choice automatically after the device has started.</string>
 
     <string name="autostart">Autostart</string>
@@ -44,12 +45,16 @@
 
     <string name="feedback_email" translatable="false">feedback@maltethier.de</string>
     <string name="feedback_subject" translatable="false">Feedback AutoStartTV</string>
+    <string name="help">Help ↗</string>
+    <string name="delay_explanation_title">Why a delay?</string>
+    <string name="delay_explanation">When switched on, many TV sticks first open their own start page or app (e.g. waipu.tv). If AutoStartTV opens the chosen app too early, it is covered by it again. 5–10 seconds are recommended.</string>
     <string name="feedback">Feedback ↗</string>
     <string name="feedback_title" translatable="false">Feedback</string>
     <string name="feedback_no_mail_app">No e-mail app is installed. Please send your feedback from another device to:\n\nfeedback@maltethier.de\nSubject: Feedback AutoStartTV</string>
     <string name="imprint">Imprint ↗</string>
     <string name="imprint_title">Imprint</string>
-    <string name="imprint_no_browser">No web browser is installed. Open this address on another device:\n\nmaltethier.de/impressum.html</string>
+    <string name="help_title">Help</string>
+    <string name="no_browser">No web browser is installed. Open this address on another device:\n\n%1$s</string>
     <string name="version">Version %1$s</string>
     <string name="ok">OK</string>
 </resources>

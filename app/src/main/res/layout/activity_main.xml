@@ -29,5 +29,12 @@
             android:layout_height="@dimen/section_gap" />
 
         <include layout="@layout/part_footer" />
+
+        <TextView
+            android:id="@+id/text_version"
+            style="@style/Text.Small.Dim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" />
     </LinearLayout>
 </ScrollView>

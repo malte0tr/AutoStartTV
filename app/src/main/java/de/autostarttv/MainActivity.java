@@ -41,7 +41,10 @@ public class MainActivity extends Activity {
         settingsLink.setOnClickListener(v ->
                 startActivity(new Intent(this, SettingsActivity.class)));
         findViewById(R.id.text_feedback).setOnClickListener(v -> sendFeedback());
-        findViewById(R.id.text_imprint).setOnClickListener(v -> openImprint());
+        findViewById(R.id.text_help).setOnClickListener(v ->
+                openUrl(R.string.help_url, R.string.help_title));
+        findViewById(R.id.text_imprint).setOnClickListener(v ->
+                openUrl(R.string.imprint_url, R.string.imprint_title));
         ((TextView) findViewById(R.id.text_version))
                 .setText(getString(R.string.version, versionName()));
 
@@ -147,13 +150,14 @@ public class MainActivity extends Activity {
         }
     }
 
-    private void openImprint() {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.imprint_url)));
+    /** Opens a web page; shows the address if there is no browser (common on TVs). */
+    private void openUrl(int urlRes, int titleRes) {
+        String url = getString(urlRes);
         try {
-            startActivity(intent);
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
         } catch (ActivityNotFoundException e) {
-            ChoiceDialog.show(this, getString(R.string.imprint_title),
-                    getString(R.string.imprint_no_browser),
+            String address = url.replaceFirst("^https?://", "");
+            ChoiceDialog.show(this, getString(titleRes), getString(R.string.no_browser, address),
                     Collections.singletonList(getString(R.string.ok)), null, -1, null);
         }
     }

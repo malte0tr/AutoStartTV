@@ -18,7 +18,8 @@ eine Spalte im Hochformat. Bedienbar mit Fernbedienung und Touch.
 2. **App** wählen und die gewünschte App auswählen.
 3. **Autostart** steht dann auf *Ein* (umschalten mit OK).
 4. **Einstellungen →** öffnen (grün hervorgehoben, solange etwas fehlt):
-   - optional **Verzögerung** einstellen (0–30 Sekunden nach dem Start),
+   - **Verzögerung** einstellen – empfohlen 5–10 Sekunden, damit die Startseite des Sticks
+     die gewünschte App nicht wieder überdeckt,
    - **Nach Standby öffnen** einschalten (auf Fernsehern schon an),
    - „Über anderen Apps einblenden“ erteilen.
 
@@ -41,6 +42,7 @@ Feedback: **Feedback ↗** öffnet die E-Mail-App an feedback@maltethier.de mit 
    ```
 6. Mit **Test** prüfen, ob die App startet.
 
+Hilfe: https://maltethier.de/autostarttv/Help.html  
 Impressum: https://maltethier.de/impressum.html
 
 ## Bauen

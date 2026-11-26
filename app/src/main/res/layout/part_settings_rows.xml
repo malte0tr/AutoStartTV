@@ -18,6 +18,27 @@
             style="@style/Text.Bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/delay_explanation_title"
+            android:textColor="@color/text"
+            android:textSize="@dimen/text_body" />
+
+        <TextView
+            style="@style/Text.Body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:maxWidth="560dp"
+            android:text="@string/delay_explanation" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/Note"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            style="@style/Text.Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/wake_explanation_title"
             android:textColor="@color/text"
             android:textSize="@dimen/text_body" />

@@ -7,6 +7,11 @@
         android:text="@string/settings_link" />
 
     <TextView
+        android:id="@+id/text_help"
+        style="@style/Link"
+        android:text="@string/help" />
+
+    <TextView
         android:id="@+id/text_feedback"
         style="@style/Link"
         android:text="@string/feedback" />
@@ -15,11 +20,4 @@
         android:id="@+id/text_imprint"
         style="@style/Link"
         android:text="@string/imprint" />
-
-    <TextView
-        android:id="@+id/text_version"
-        style="@style/Text.Small.Dim"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp" />
 </merge>
