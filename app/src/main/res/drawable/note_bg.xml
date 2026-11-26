@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Explanation blocks: a green bar on the left when selected with the remote. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true">
+        <layer-list>
+            <item android:drawable="@color/accent" />
+            <item android:left="4dp" android:drawable="@color/background" />
+        </layer-list>
+    </item>
+    <item android:drawable="@android:color/transparent" />
+</selector>

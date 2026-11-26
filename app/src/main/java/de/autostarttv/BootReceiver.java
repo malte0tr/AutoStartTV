@@ -8,7 +8,11 @@ import android.os.Looper;
 import android.os.SystemClock;
 import android.util.Log;
 
-/** Starts the selected app after the device has booted. */
+/**
+ * Starts the selected app after the device has booted, and starts the background
+ * service that also opens it after standby. Also runs after an app update, so the
+ * service keeps running.
+ */
 public class BootReceiver extends BroadcastReceiver {
 
     private static final String TAG = "AutoStartTV";
@@ -22,9 +26,13 @@ public class BootReceiver extends BroadcastReceiver {
         if (action == null) {
             return;
         }
+        WakeService.sync(context);
+        if (Intent.ACTION_MY_PACKAGE_REPLACED.equals(action)) {
+            return;
+        }
         Settings settings = new Settings(context);
         String packageName = settings.getPackage();
-        if (!settings.isEnabled() || packageName == null) {
+        if (!settings.isReady()) {
             return;
         }
         synchronized (BootReceiver.class) {

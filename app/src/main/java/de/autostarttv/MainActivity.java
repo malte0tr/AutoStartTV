@@ -54,6 +54,8 @@ public class MainActivity extends Activity {
     protected void onResume() {
         super.onResume();
         updateViews();
+        // Make sure the background service runs (e.g. after it was stopped by the system).
+        WakeService.sync(this);
     }
 
     private TextView setupRow(int rowId, int labelRes, View.OnClickListener click) {
@@ -78,6 +80,7 @@ public class MainActivity extends Activity {
     private void toggleEnabled() {
         settings.setEnabled(!settings.isEnabled());
         updateViews();
+        WakeService.sync(this);
     }
 
     private void chooseApp() {
@@ -112,6 +115,7 @@ public class MainActivity extends Activity {
                         settings.setPackage(apps.get(index).packageName);
                         settings.setEnabled(true);
                         updateViews();
+                        WakeService.sync(this);
                     });
         });
     }

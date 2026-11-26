@@ -17,9 +17,15 @@
     <string name="permission_granted">Granted</string>
     <string name="permission_missing">Grant →</string>
     <string name="permission_not_needed">Not needed</string>
-    <string name="permission_explanation">AutoStartTV needs the permission \"Display over other apps\" to open an app after the device has started.</string>
+    <string name="wake">Open after standby</string>
+    <string name="wake_explanation_title">Why \"Open after standby\"?</string>
+    <string name="wake_explanation">Most TV sticks do not shut down when switched off – they only go to standby. When switched on again they do not restart, so the autostart after a restart would not run. With this option AutoStartTV also opens the app when the device wakes from standby. A small background service waits for this.</string>
+    <string name="permission_explanation_title">Why \"Display over other apps\"?</string>
+    <string name="permission_explanation">Since Android 10, apps running in the background may not open other apps. After switching on, AutoStartTV runs in the background – only with this permission can it open the chosen app. AutoStartTV does not display anything over other apps itself.\n\nAfter installing, open AutoStartTV once: Android only runs the autostart of apps that have been opened before.</string>
+    <string name="notification_channel">Background service</string>
+    <string name="notification_text">Waiting for the device to be switched on.</string>
     <string name="settings_title">Settings</string>
-    <string name="settings_description">Delay and permission for the autostart.</string>
+    <string name="settings_description">Delay, standby and permission for the autostart.</string>
     <string name="settings_link">Settings →</string>
 
     <string name="choose_app">Choose app</string>

@@ -15,9 +15,15 @@
     <string name="permission_granted">Erteilt</string>
     <string name="permission_missing">Erteilen →</string>
     <string name="permission_not_needed">Nicht nötig</string>
-    <string name="permission_explanation">AutoStartTV braucht die Berechtigung \"Über anderen Apps einblenden\", um nach dem Start eine App öffnen zu dürfen.</string>
+    <string name="wake">Nach Standby öffnen</string>
+    <string name="wake_explanation_title">Warum \"Nach Standby öffnen\"?</string>
+    <string name="wake_explanation">Die meisten TV-Sticks fahren beim Ausschalten nicht herunter, sondern gehen nur in den Standby. Beim Einschalten starten sie deshalb nicht neu, und der Autostart nach dem Neustart würde nicht ausgeführt. Mit dieser Option öffnet AutoStartTV die App auch, wenn das Gerät aus dem Standby aufwacht. Dafür wartet ein kleiner Hintergrunddienst.</string>
+    <string name="permission_explanation_title">Warum \"Über anderen Apps einblenden\"?</string>
+    <string name="permission_explanation">Seit Android 10 dürfen Apps, die im Hintergrund laufen, keine anderen Apps öffnen. Nach dem Einschalten läuft AutoStartTV im Hintergrund – nur mit dieser Berechtigung darf es die gewünschte App trotzdem öffnen. AutoStartTV selbst blendet nichts über anderen Apps ein.\n\nNach der Installation AutoStartTV einmal öffnen: Android führt den Autostart nur bei Apps aus, die schon einmal geöffnet wurden.</string>
+    <string name="notification_channel">Hintergrunddienst</string>
+    <string name="notification_text">Wartet auf das Einschalten des Geräts.</string>
     <string name="settings_title">Einstellungen</string>
-    <string name="settings_description">Verzögerung und Berechtigung für den Autostart.</string>
+    <string name="settings_description">Verzögerung, Standby und Berechtigung für den Autostart.</string>
     <string name="settings_link">Einstellungen →</string>
 
     <string name="choose_app">App auswählen</string>

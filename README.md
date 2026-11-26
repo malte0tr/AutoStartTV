@@ -19,7 +19,19 @@ eine Spalte im Hochformat. Bedienbar mit Fernbedienung und Touch.
 3. **Autostart** steht dann auf *Ein* (umschalten mit OK).
 4. **Einstellungen →** öffnen (grün hervorgehoben, solange etwas fehlt):
    - optional **Verzögerung** einstellen (0–30 Sekunden nach dem Start),
+   - **Nach Standby öffnen** einschalten (auf Fernsehern schon an),
    - „Über anderen Apps einblenden“ erteilen.
+
+### Wann öffnet sich die App?
+
+- **Nach einem Neustart** des Geräts.
+- **Nach dem Einschalten aus dem Standby** (Option *Nach Standby öffnen*).
+  Die meisten TV-Sticks fahren beim Ausschalten nicht herunter, sondern gehen in den Standby.
+  Ein kleiner Hintergrunddienst bemerkt das Einschalten und öffnet dann die App.
+
+Wichtig: AutoStartTV nach der Installation **einmal öffnen** – vorher führt Android
+den Autostart nicht aus. Ab Android 10 ist außerdem „Über anderen Apps einblenden“
+nötig, weil Apps aus dem Hintergrund sonst keine anderen Apps öffnen dürfen.
 
 Feedback: **Feedback ↗** öffnet die E-Mail-App an feedback@maltethier.de mit dem Betreff „Feedback AutoStartTV“.
    Ab Android 10 darf eine App nur mit dieser Berechtigung andere Apps im Hintergrund starten.

@@ -9,11 +9,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/** Settings page: start delay and the permission needed for autostart. */
+/** Settings page: start delay, opening after standby and the needed permission. */
 public class SettingsActivity extends Activity {
 
     private Settings settings;
     private TextView delayValue;
+    private TextView wakeValue;
     private TextView permissionValue;
 
     @Override
@@ -26,6 +27,15 @@ public class SettingsActivity extends Activity {
         ((TextView) delayRow.findViewById(R.id.row_label)).setText(R.string.delay);
         delayValue = delayRow.findViewById(R.id.row_value);
         delayRow.setOnClickListener(v -> chooseDelay());
+
+        View wakeRow = findViewById(R.id.row_wake);
+        ((TextView) wakeRow.findViewById(R.id.row_label)).setText(R.string.wake);
+        wakeValue = wakeRow.findViewById(R.id.row_value);
+        wakeRow.setOnClickListener(v -> {
+            settings.setWakeEnabled(!settings.isWakeEnabled());
+            updateWake();
+            WakeService.sync(this);
+        });
 
         View row = findViewById(R.id.row_permission);
         ((TextView) row.findViewById(R.id.row_label)).setText(R.string.permission);
@@ -40,6 +50,7 @@ public class SettingsActivity extends Activity {
     protected void onResume() {
         super.onResume();
         updateDelay();
+        updateWake();
         boolean missing = Permissions.isMissing(this);
         if (!Permissions.isNeeded()) {
             permissionValue.setText(R.string.permission_not_needed);
@@ -47,6 +58,12 @@ public class SettingsActivity extends Activity {
             permissionValue.setText(missing ? R.string.permission_missing : R.string.permission_granted);
         }
         Ui.setAccent(permissionValue, missing);
+    }
+
+    private void updateWake() {
+        boolean on = settings.isWakeEnabled();
+        wakeValue.setText(on ? R.string.on : R.string.off);
+        Ui.setAccent(wakeValue, on);
     }
 
     private void updateDelay() {

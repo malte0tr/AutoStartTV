@@ -7,7 +7,7 @@ plugins {
 
 // Version = versionMajor.versionMinor (Versionsnummer.Zwischennummer).
 val versionMajor = 1
-val versionMinor = 4
+val versionMinor = 5
 
 android {
     namespace = "de.autostarttv"
@@ -17,7 +17,7 @@ android {
         applicationId = "de.autostarttv"
         minSdk = 21
         targetSdk = 35
-        versionCode = 5
+        versionCode = 6
         versionName = "$versionMajor.$versionMinor"
     }
 

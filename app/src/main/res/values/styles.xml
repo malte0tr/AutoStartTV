@@ -61,6 +61,19 @@
         <item name="android:focusable">true</item>
     </style>
 
+    <!-- Explanation block; focusable so it can be scrolled to with a remote. -->
+    <style name="Note">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">@drawable/note_bg</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:layout_marginLeft">-16dp</item>
+    </style>
+
     <style name="Row">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
