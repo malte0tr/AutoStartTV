@@ -1,22 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="description">Öffnet eine App automatisch, nachdem der Fernseher gestartet ist.</string>
-    <string name="enabled">Autostart aktiviert</string>
-    <string name="app_selected">App: %1$s</string>
-    <string name="app_none">keine ausgewählt</string>
+    <string name="description">Öffnet eine App Ihrer Wahl automatisch, nachdem das Gerät gestartet ist.</string>
+
+    <string name="autostart">Autostart</string>
+    <string name="on">Ein</string>
+    <string name="off">Aus</string>
+    <string name="app">App</string>
+    <string name="app_none">Keine</string>
+    <string name="delay">Verzögerung</string>
+    <string name="delay_value">%1$d s</string>
+    <string name="test">Test</string>
+    <string name="test_value">Jetzt starten</string>
+    <string name="permission">Berechtigung fehlt</string>
+    <string name="permission_value">Erteilen →</string>
+
     <string name="choose_app">App auswählen</string>
+    <string name="choose_delay">Verzögerung nach dem Start</string>
+    <string name="loading">Wird geladen…</string>
     <string name="choose_app_first">Bitte zuerst eine App auswählen.</string>
     <string name="no_apps">Keine Apps gefunden.</string>
-    <string name="delay">Verzögerung nach dem Start</string>
-    <string name="delay_value">Verzögerung: %1$d s</string>
+    <string name="launch_failed">Die App konnte nicht gestartet werden.</string>
     <plurals name="seconds">
         <item quantity="one">%1$d Sekunde</item>
         <item quantity="other">%1$d Sekunden</item>
     </plurals>
-    <string name="test">Jetzt testen</string>
-    <string name="launch_failed">Die App konnte nicht gestartet werden.</string>
+
     <string name="permission_title">Berechtigung</string>
-    <string name="permission_hint">Damit der Autostart funktioniert, \"Über anderen Apps einblenden\" für AutoStartTV erlauben.</string>
-    <string name="permission_button">Berechtigung erteilen</string>
-    <string name="permission_manual">Dieser Fernseher hat keine Einstellung für diese Berechtigung. Am Computer ausführen:\n\nadb shell appops set de.autostarttv SYSTEM_ALERT_WINDOW allow</string>
+    <string name="permission_manual">Dieses Gerät hat keine Einstellung für \"Über anderen Apps einblenden\". Am Computer ausführen:\n\nadb shell appops set de.autostarttv SYSTEM_ALERT_WINDOW allow</string>
+
+    <string name="imprint">Impressum ↗</string>
+    <string name="imprint_title">Impressum</string>
+    <string name="imprint_no_browser">Kein Webbrowser installiert. Diese Adresse auf einem anderen Gerät öffnen:\n\nmaltethier.de/impressum.html</string>
+    <string name="version">Version %1$s</string>
+    <string name="ok">OK</string>
 </resources>

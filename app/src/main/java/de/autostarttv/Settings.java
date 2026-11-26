@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 /** Small wrapper around the stored settings. */
 final class Settings {
 
-    static final int[] DELAYS = {0, 5, 10, 20, 30};
+    static final int[] DELAYS = {0, 2, 5, 10, 20, 30};
 
     private static final String FILE = "settings";
     private static final String KEY_ENABLED = "enabled";
