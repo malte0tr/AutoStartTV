@@ -10,7 +10,10 @@
     <string name="no_apps">No apps found.</string>
     <string name="delay">Delay after start</string>
     <string name="delay_value">Delay: %1$d s</string>
-    <string name="seconds">%1$d seconds</string>
+    <plurals name="seconds">
+        <item quantity="one">%1$d second</item>
+        <item quantity="other">%1$d seconds</item>
+    </plurals>
     <string name="test">Test now</string>
     <string name="launch_failed">The app could not be started.</string>
     <string name="permission_title">Permission</string>

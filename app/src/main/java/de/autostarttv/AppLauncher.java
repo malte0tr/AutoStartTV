@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.os.Build;
 
 import java.text.Collator;
 import java.util.ArrayList;
@@ -75,10 +74,7 @@ final class AppLauncher {
             return false;
         }
         PackageManager pm = context.getPackageManager();
-        Intent intent = null;
-        if (Build.VERSION.SDK_INT >= 21) {
-            intent = pm.getLeanbackLaunchIntentForPackage(packageName);
-        }
+        Intent intent = pm.getLeanbackLaunchIntentForPackage(packageName);
         if (intent == null) {
             intent = pm.getLaunchIntentForPackage(packageName);
         }

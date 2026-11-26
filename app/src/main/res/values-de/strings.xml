@@ -9,7 +9,10 @@
     <string name="no_apps">Keine Apps gefunden.</string>
     <string name="delay">Verzögerung nach dem Start</string>
     <string name="delay_value">Verzögerung: %1$d s</string>
-    <string name="seconds">%1$d Sekunden</string>
+    <plurals name="seconds">
+        <item quantity="one">%1$d Sekunde</item>
+        <item quantity="other">%1$d Sekunden</item>
+    </plurals>
     <string name="test">Jetzt testen</string>
     <string name="launch_failed">Die App konnte nicht gestartet werden.</string>
     <string name="permission_title">Berechtigung</string>

@@ -94,7 +94,7 @@ public class MainActivity extends Activity {
         String[] labels = new String[delays.length];
         int selected = -1;
         for (int i = 0; i < delays.length; i++) {
-            labels[i] = getString(R.string.seconds, delays[i]);
+            labels[i] = getResources().getQuantityString(R.plurals.seconds, delays[i], delays[i]);
             if (delays[i] == settings.getDelaySeconds()) {
                 selected = i;
             }
@@ -124,6 +124,8 @@ public class MainActivity extends Activity {
         return Build.VERSION.SDK_INT >= 23 && !android.provider.Settings.canDrawOverlays(this);
     }
 
+    // Only reachable on API 23+, the button is hidden on older versions.
+    @android.annotation.TargetApi(23)
     private void openPermissionSettings() {
         Intent intent = new Intent(android.provider.Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
                 Uri.parse("package:" + getPackageName()));
