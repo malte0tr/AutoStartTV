@@ -36,6 +36,11 @@
     <string name="permission_title">Permission</string>
     <string name="permission_manual">This device has no settings screen for \"Display over other apps\". Run on a computer:\n\nadb shell appops set de.autostarttv SYSTEM_ALERT_WINDOW allow</string>
 
+    <string name="feedback_email" translatable="false">feedback@maltethier.de</string>
+    <string name="feedback_subject" translatable="false">Feedback AutoStartTV</string>
+    <string name="feedback">Feedback ↗</string>
+    <string name="feedback_title" translatable="false">Feedback</string>
+    <string name="feedback_no_mail_app">No e-mail app is installed. Please send your feedback from another device to:\n\nfeedback@maltethier.de\nSubject: Feedback AutoStartTV</string>
     <string name="imprint">Imprint ↗</string>
     <string name="imprint_title">Imprint</string>
     <string name="imprint_no_browser">No web browser is installed. Open this address on another device:\n\nmaltethier.de/impressum.html</string>

@@ -40,6 +40,7 @@ public class MainActivity extends Activity {
         settingsLink = findViewById(R.id.text_settings);
         settingsLink.setOnClickListener(v ->
                 startActivity(new Intent(this, SettingsActivity.class)));
+        findViewById(R.id.text_feedback).setOnClickListener(v -> sendFeedback());
         findViewById(R.id.text_imprint).setOnClickListener(v -> openImprint());
         ((TextView) findViewById(R.id.text_version))
                 .setText(getString(R.string.version, versionName()));
@@ -122,6 +123,23 @@ public class MainActivity extends Activity {
         }
         if (!AppLauncher.launch(this, settings.getPackage())) {
             Toast.makeText(this, R.string.launch_failed, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    /** Opens the e-mail app with address and subject already filled in. */
+    private void sendFeedback() {
+        String email = getString(R.string.feedback_email);
+        String subject = getString(R.string.feedback_subject);
+        Intent intent = new Intent(Intent.ACTION_SENDTO,
+                Uri.parse("mailto:" + email + "?subject=" + Uri.encode(subject)));
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{email});
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        try {
+            startActivity(intent);
+        } catch (ActivityNotFoundException e) {
+            ChoiceDialog.show(this, getString(R.string.feedback_title),
+                    getString(R.string.feedback_no_mail_app),
+                    Collections.singletonList(getString(R.string.ok)), null, -1, null);
         }
     }
 

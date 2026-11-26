@@ -7,6 +7,11 @@
         android:text="@string/settings_link" />
 
     <TextView
+        android:id="@+id/text_feedback"
+        style="@style/Link"
+        android:text="@string/feedback" />
+
+    <TextView
         android:id="@+id/text_imprint"
         style="@style/Link"
         android:text="@string/imprint" />

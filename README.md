@@ -20,6 +20,8 @@ eine Spalte im Hochformat. Bedienbar mit Fernbedienung und Touch.
 4. **Einstellungen →** öffnen (grün hervorgehoben, solange etwas fehlt):
    - optional **Verzögerung** einstellen (0–30 Sekunden nach dem Start),
    - „Über anderen Apps einblenden“ erteilen.
+
+Feedback: **Feedback ↗** öffnet die E-Mail-App an feedback@maltethier.de mit dem Betreff „Feedback AutoStartTV“.
    Ab Android 10 darf eine App nur mit dieser Berechtigung andere Apps im Hintergrund starten.
    Hat der Fernseher dafür keine Einstellung, per Computer:
    ```

@@ -5,8 +5,8 @@
     <dimen name="page_pad_v">48dp</dimen>
     <dimen name="page_pad_top">72dp</dimen>
     <dimen name="column_gap">64dp</dimen>
-    <dimen name="section_gap">32dp</dimen>
-    <dimen name="row_min_height">76dp</dimen>
+    <dimen name="section_gap">24dp</dimen>
+    <dimen name="row_min_height">72dp</dimen>
     <dimen name="value_max_width">320dp</dimen>
     <dimen name="text_title">64sp</dimen>
     <dimen name="text_title_page">60sp</dimen>

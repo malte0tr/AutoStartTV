@@ -34,6 +34,8 @@
     <string name="permission_title">Berechtigung</string>
     <string name="permission_manual">Dieses Gerät hat keine Einstellung für \"Über anderen Apps einblenden\". Am Computer ausführen:\n\nadb shell appops set de.autostarttv SYSTEM_ALERT_WINDOW allow</string>
 
+    <string name="feedback">Feedback ↗</string>
+    <string name="feedback_no_mail_app">Keine E-Mail-App installiert. Bitte das Feedback von einem anderen Gerät senden an:\n\nfeedback@maltethier.de\nBetreff: Feedback AutoStartTV</string>
     <string name="imprint">Impressum ↗</string>
     <string name="imprint_title">Impressum</string>
     <string name="imprint_no_browser">Kein Webbrowser installiert. Diese Adresse auf einem anderen Gerät öffnen:\n\nmaltethier.de/impressum.html</string>
